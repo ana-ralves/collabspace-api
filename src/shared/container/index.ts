@@ -1,3 +1,4 @@
+import "./providers";
 import { container } from "tsyringe";
 
 import { IUsersRepositories } from "@modules/users/iRepositories/IUsersRepositories";
