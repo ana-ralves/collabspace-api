@@ -3,7 +3,8 @@ import { CreatePostController } from "@modules/posts/useCases/createPost/createP
 import { Router } from "express";
 
 import { authentication } from "src/middlewares/authentication";
-import { UpdatePostController } from "@modules/posts/useCases/updatePostController";
+import { DeletePostController } from "@modules/posts/useCases/deletePost/deletePostController";
+import { UpdatePostController } from "@modules/posts/useCases/updatePost/updatePostController";
 
 const postRoutes = Router();
 
@@ -13,5 +14,6 @@ postRoutes.use(authentication);
 
 postRoutes.post("/", new CreatePostController().handle);
 postRoutes.put("/:id", new UpdatePostController().handle);
+postRoutes.delete("/:id", new DeletePostController().handle);
 
 export { postRoutes };

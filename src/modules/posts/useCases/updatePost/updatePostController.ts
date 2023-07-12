@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { IRequestUpdatePost } from "../dtos/posts";
 import { UpdatePostUseCase } from "./updatePostUsecase";
 import { container } from "tsyringe";
+import { IRequestUpdatePost } from "@modules/posts/dtos/posts";
 
 class UpdatePostController {
   async handle(request: Request, response: Response) {
