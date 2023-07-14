@@ -1,6 +1,6 @@
 import { prisma } from "@libs/prismaClient";
 import { ICommentsRepositories } from "../iRepositories/ICommentsRepositories";
-import { IComment, ICreateComment } from "../dtos/comments";
+import { IComment, ICreateComment, IUpdateComment } from "../dtos/comments";
 
 class CommentRepository implements ICommentsRepositories {
   create({ id, postId, userId, content }: ICreateComment): Promise<IComment> {
@@ -9,6 +9,21 @@ class CommentRepository implements ICommentsRepositories {
         id,
         post_id: postId,
         user_id: userId,
+        content,
+      },
+    });
+  }
+
+  listById(id: string): Promise<IComment | null> {
+    return prisma.comments.findFirst({
+      where: { id },
+    });
+  }
+
+  async update({ id, content }: IUpdateComment): Promise<void> {
+    await prisma.comments.update({
+      where: { id },
+      data: {
         content,
       },
     });
