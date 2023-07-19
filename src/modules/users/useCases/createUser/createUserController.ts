@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
+
 import { CreateUserUseCase } from "./createUserUseCase";
 import { IRequestCreateUser } from "@modules/users/dtos/users";
 

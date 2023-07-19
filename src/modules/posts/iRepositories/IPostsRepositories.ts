@@ -1,4 +1,4 @@
-import { IPost, ICreatePost, IListAllPosts, IUpdatePost } from "../dtos/posts";
+import { ICreatePost, IListAllPosts, IPost, IUpdatePost } from "../dtos/posts";
 
 interface IPostsRepositories {
   create(post: ICreatePost): Promise<IPost>;

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { DeleteCommentUseCase } from "./deleteCommentUseCase";
 import { container } from "tsyringe";
+import { DeleteCommentUseCase } from "./deleteCommentUseCase";
 
 class DeleteCommentController {
   async handle(request: Request, response: Response) {

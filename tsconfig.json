@@ -12,14 +12,14 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "typeRoots": ["./node_modules/@types", "./src/@types"],
-		"baseUrl": "./",
-		"paths": {
-			"@helpers/*": ["./src/helpers/*"],
-			"@libs/*": ["./src/libs/*"],
-			"@modules/*": ["./src/modules/*"],
-			"@routes/*": ["./src/routes/*"],
-			"@shared/*": ["./src/shared/*"],
-			"@utils/*": ["./src/utils/*"],
-		}
+    "baseUrl": "./",
+    "paths": {
+      "@helpers/*": ["./src/helpers/*"],
+      "@libs/*": ["./src/libs/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@utils/*": ["./src/utils/*"],
+    }
   }
 }

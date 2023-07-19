@@ -1,6 +1,6 @@
 import { prisma } from "@libs/prismaClient";
 import { ICommentsRepositories } from "../iRepositories/ICommentsRepositories";
-import { IComment, ICreateComment, IUpdateComment } from "../dtos/comments";
+import { ICreateComment, IComment, IUpdateComment } from "../dtos/comments";
 
 class CommentRepository implements ICommentsRepositories {
   create({ id, postId, userId, content }: ICreateComment): Promise<IComment> {

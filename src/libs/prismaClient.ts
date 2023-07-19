@@ -5,6 +5,3 @@ const prisma = new PrismaClient({
 });
 
 export { prisma };
-
-// npx prisma db pull
-//  npx prisma generate (sempre usar prisma generate a cada modificação no banco de dados)

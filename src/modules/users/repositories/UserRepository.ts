@@ -56,4 +56,5 @@ class UserRepository implements IUsersRepositories {
     });
   }
 }
+
 export { UserRepository };

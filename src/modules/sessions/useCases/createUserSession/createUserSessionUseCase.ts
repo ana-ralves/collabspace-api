@@ -1,9 +1,9 @@
 import { inject, injectable } from "tsyringe";
 import { sign } from "jsonwebtoken";
-import { AppError } from "@helpers/errorsHandler";
 import { AppResponse } from "@helpers/responseParser";
 import { IRequestCreateUserSession } from "@modules/sessions/dtos/sessions";
 import { IUsersRepositories } from "@modules/users/iRepositories/IUsersRepositories";
+import { AppError } from "@helpers/errorsHandler";
 import { IBcryptProvider } from "@shared/container/providers/bcryptProvider/IBcryptProvider";
 
 @injectable()
@@ -21,11 +21,15 @@ class CreateUserSessionUseCase {
   }: IRequestCreateUserSession): Promise<AppResponse> {
     const listUserByEmail = await this.userRepository.listByEmail(email);
 
-    console.log(listUserByEmail);
-
     if (!listUserByEmail) {
       throw new AppError({
         message: "E-mail ou senha incorretos!",
+      });
+    }
+
+    if (!listUserByEmail.active) {
+      throw new AppError({
+        message: "Usuário inativo!",
       });
     }
 
@@ -37,12 +41,6 @@ class CreateUserSessionUseCase {
     if (!passwordMatch) {
       throw new AppError({
         message: "E-mail ou senha incorretos!",
-      });
-    }
-
-    if (!listUserByEmail.active) {
-      throw new AppError({
-        message: "Usuário inativo!",
       });
     }
 

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { IRequestCreateUserSession } from "@modules/sessions/dtos/sessions";
-import { CreateUserSessionUseCase } from "./createUserSessionUseCase";
 import { container } from "tsyringe";
+import { CreateUserSessionUseCase } from "./createUserSessionUseCase";
 
 class CreateUserSessionController {
   async handle(request: Request, response: Response) {

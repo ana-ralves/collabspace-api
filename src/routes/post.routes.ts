@@ -1,10 +1,11 @@
-import { ListAllPostsController } from "@modules/posts/useCases/listAllPosts/listAllPostsController";
-import { CreatePostController } from "@modules/posts/useCases/createPost/createPostController";
 import { Router } from "express";
 
+import { CreatePostController } from "@modules/posts/useCases/createPost/createPostController";
+
 import { authentication } from "src/middlewares/authentication";
-import { DeletePostController } from "@modules/posts/useCases/deletePost/deletePostController";
+import { ListAllPostsController } from "@modules/posts/useCases/listAllPosts/listAllPostsController";
 import { UpdatePostController } from "@modules/posts/useCases/updatePost/updatePostController";
+import { DeletePostController } from "@modules/posts/useCases/deletePost/deletePostController";
 
 const postRoutes = Router();
 
