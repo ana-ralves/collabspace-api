@@ -36,6 +36,7 @@ class AcceptRequestUseCase {
 
     if (usrId !== listFriendById.user_id_2) {
       throw new AppError({
+        statusCode: 401,
         message: "Operação não permitida!",
       });
     }
