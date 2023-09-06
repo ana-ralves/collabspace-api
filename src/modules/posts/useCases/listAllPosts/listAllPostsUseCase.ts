@@ -14,7 +14,7 @@ class ListAllPostsUseCase {
     private postRepository: IPostsRepositories
   ) {}
 
-  async excute({ page, limit }: IRequest): Promise<AppResponse> {
+  async execute({ page, limit }: IRequest): Promise<AppResponse> {
     const listAll = await this.postRepository.listAll(
       Number(page) || 0,
       Number(limit) || 10
@@ -34,6 +34,7 @@ class ListAllPostsUseCase {
             user: {
               id: users.id,
               name: users.name,
+              email: users.email,
               avatarUrl: users.avatar_url,
             },
           };
@@ -48,6 +49,7 @@ class ListAllPostsUseCase {
           user: {
             id: users.id,
             name: users.name,
+            emai: users.email,
             avatarUrl: users.avatar_url,
           },
           reactions,
@@ -64,6 +66,7 @@ class ListAllPostsUseCase {
           user: {
             id: users.id,
             name: users.name,
+            email: users.email,
             avatarUrl: users.avatar_url,
           },
         };
@@ -80,6 +83,7 @@ class ListAllPostsUseCase {
         user: {
           id: users.id,
           name: users.name,
+          email: users.email,
           avatarUrl: users.avatar_url,
         },
         comments,
