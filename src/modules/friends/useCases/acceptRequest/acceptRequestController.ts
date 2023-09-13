@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { AcceptRequestUseCase } from "./acceptRequestUseCase";
 import { container } from "tsyringe";
+import { AcceptRequestUseCase } from "./acceptRequestUseCase";
 
 class AcceptRequestController {
   async handle(request: Request, response: Response) {

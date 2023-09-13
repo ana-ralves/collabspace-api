@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { RecuseRequestUseCase } from "./recuseRequestUseCase";
 import { container } from "tsyringe";
+import { RecuseRequestUseCase } from "./recuseRequestUseCase";
 
 class RecuseRequestController {
   async handle(request: Request, response: Response) {

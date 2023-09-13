@@ -1,10 +1,10 @@
-import { AppError } from "@helpers/errorsHandler";
-import { AppResponse } from "@helpers/responseParser";
-import { IFriendsRepositories } from "@modules/friends/iRepositories/iFriendsRepositories";
-import { IUsersRepositories } from "@modules/users/iRepositories/IUsersRepositories";
-import { IUuidProvider } from "@shared/container/providers/uuidProvider/IUuidProvider";
-import { EnumFriendActions } from "src/enums/friendActions";
 import { inject, injectable } from "tsyringe";
+import { IFriendsRepositories } from "@modules/friends/iRepositories/IFriendsRepositories";
+import { IUuidProvider } from "@shared/container/providers/uuidProvider/IUuidProvider";
+import { AppResponse } from "@helpers/responseParser";
+import { IUsersRepositories } from "@modules/users/iRepositories/IUsersRepositories";
+import { AppError } from "@helpers/errorsHandler";
+import { EnumFriendActions } from "src/enums/friendActions";
 
 interface IRequest {
   usrId: string;
@@ -25,7 +25,7 @@ class CreateFriendUseCase {
   async execute({ usrId, targetId }: IRequest): Promise<AppResponse> {
     if (!this.uuidProvider.validateUUID(targetId)) {
       throw new AppError({
-        message: "ID é inválido!",
+        message: "ID inválido!",
       });
     }
 
@@ -81,6 +81,7 @@ class CreateFriendUseCase {
         });
       }
     }
+
     const createFriend = await this.friendRepository.create({
       id: this.uuidProvider.createUUID(),
       userId1: usrId,
@@ -93,7 +94,7 @@ class CreateFriendUseCase {
       data: {
         id: createFriend.id,
         userId1: createFriend.action_id_1,
-        userId2: createFriend.action_id_2,
+        userId2: createFriend.user_id_2,
         actionId1: createFriend.action_id_1,
         actionId2: createFriend.action_id_2,
         createdAt: createFriend.created_at,

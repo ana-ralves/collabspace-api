@@ -6,7 +6,7 @@ import {
   IListAllRequestsByUser,
   IUpdateActionStatus,
 } from "../dtos/friends";
-import { IFriendsRepositories } from "../iRepositories/iFriendsRepositories";
+import { IFriendsRepositories } from "../iRepositories/IFriendsRepositories";
 import { EnumFriendActions } from "src/enums/friendActions";
 
 class FriendRepository implements IFriendsRepositories {

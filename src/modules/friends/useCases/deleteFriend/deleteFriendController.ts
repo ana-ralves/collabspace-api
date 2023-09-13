@@ -14,7 +14,7 @@ class DeleteFriendController {
       id,
     });
 
-    return response.status(result.statusCode).json();
+    return response.status(result.statusCode).json(result);
   }
 }
 

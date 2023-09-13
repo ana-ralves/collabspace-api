@@ -1,6 +1,6 @@
-import { AppResponse } from "@helpers/responseParser";
-import { IFriendsRepositories } from "@modules/friends/iRepositories/iFriendsRepositories";
 import { inject, injectable } from "tsyringe";
+import { AppResponse } from "@helpers/responseParser";
+import { IFriendsRepositories } from "@modules/friends/iRepositories/IFriendsRepositories";
 
 interface IRequest {
   usrId: string;

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { CreateFriendUseCase } from "./createFriendUseCase";
 import { container } from "tsyringe";
+import { CreateFriendUseCase } from "./createFriendUseCase";
 
 class CreateFriendController {
   async handle(request: Request, response: Response) {
